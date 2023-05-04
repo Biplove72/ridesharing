@@ -11,7 +11,8 @@ class RideSharingApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(canvasColor: Color(0xFFFFFFFF)),
       home: RideSharing(),
     );
   }

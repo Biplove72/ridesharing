@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ridesharing_app/common/custom_button.dart';
 import 'package:ridesharing_app/common/theme.dart';
 import 'package:ridesharing_app/screen/password_page.dart';
+import 'package:ridesharing_app/screen/ridermode/riderauth/rider_password.dart';
 import 'package:ridesharing_app/screen/widgets/text_form_widget.dart';
 
 class RiderLoginPage extends StatelessWidget {
@@ -31,7 +32,7 @@ class RiderLoginPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Container(
-                        height: 60,
+                        height: 55,
                         width: double.infinity,
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey),
@@ -90,7 +91,7 @@ class RiderLoginPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PasswordPage()));
+                            builder: (context) => RiderPasswordPage()));
                   },
                   height: 50),
               //Text('Already have an account?'),

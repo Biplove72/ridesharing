@@ -8,6 +8,7 @@ class ChooseLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -16,18 +17,18 @@ class ChooseLocation extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  top: 10,
-                  right: 20,
-                ),
-                child: Icon(
-                  Icons.circle_outlined,
-                  size: 20,
-                ),
-              ),
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    top: 10,
+                    right: 20,
+                  ),
+                  child: ImageIcon(
+                    AssetImage('assets/images/pin.png'),
+                    color: Colors.red,
+                  )),
               Container(
-                width: 200,
+                constraints: BoxConstraints(
+                    maxWidth: screenWidth * 0.6, minWidth: screenWidth * 0.3),
                 child: TextFormField(
                   decoration: InputDecoration(hintText: 'pickup location'),
                 ),
@@ -38,14 +39,16 @@ class ChooseLocation extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
-                child: Icon(
-                  Icons.circle_outlined,
-                  color: Colors.green,
+                child: ImageIcon(
+                  AssetImage('assets/images/flags.png'),
+                  color: Colors.red,
                   size: 20,
                 ),
               ),
               Container(
-                width: 200,
+                // width: 200,
+                constraints: BoxConstraints(
+                    maxWidth: screenWidth * 0.6, minWidth: screenWidth * 0.3),
                 child: TextFormField(
                   decoration: InputDecoration(
                       hintText: 'destination loaction',
@@ -68,7 +71,10 @@ class ChooseLocation extends StatelessWidget {
                 children: [
                   Text('any message for driver'),
                   Container(
-                      width: 200,
+                      //width: 200,
+                      constraints: BoxConstraints(
+                          maxWidth: screenWidth * 0.6,
+                          minWidth: screenWidth * 0.3),
                       child: TextFormField(
                         decoration: InputDecoration(
                             focusedBorder: UnderlineInputBorder(
@@ -85,7 +91,7 @@ class ChooseLocation extends StatelessWidget {
             children: [
               CustomButton(
                 text: 'single Trip',
-                width: 145,
+                width: MediaQuery.of(context).size.width * 0.4,
                 navigation: () {},
                 height: 50,
                 color: CustomTheme.skyBlue,
@@ -95,7 +101,7 @@ class ChooseLocation extends StatelessWidget {
               // ),
               CustomButton(
                 text: 'double Trip',
-                width: 145,
+                width: MediaQuery.of(context).size.width * 0.4,
                 navigation: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SearchingRide()));

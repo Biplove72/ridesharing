@@ -11,10 +11,11 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        
-        press: () {
-        Navigator.pop(context);
-      }),
+          action: [],
+          appbarcolor: Colors.white,
+          press: () {
+            Navigator.pop(context);
+          }),
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
@@ -37,8 +38,14 @@ class CustomDrawer extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
-                        Text('UserName'),
-                        Text('986723630'),
+                        Text(
+                          'UserName',
+                          style: CustomTheme.textStyle18,
+                        ),
+                        Text(
+                          '986723630',
+                          style: CustomTheme.textStyle16,
+                        ),
                         Text('user@gmail.com')
                       ],
                     ),
@@ -140,8 +147,8 @@ class CustomListTile extends StatelessWidget {
       required this.subTitle,
       required this.onTap,
       required this.title,
-      this.leadingIcon});
-  final Icon? leadingIcon;
+      this.leadingcontent});
+  final Widget? leadingcontent;
   final String title;
   final String subTitle;
   final void Function()? onTap;
@@ -152,7 +159,7 @@ class CustomListTile extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: onTap,
-        leading: leadingIcon,
+        leading: leadingcontent,
         trailing: Icon(Icons.arrow_forward_ios_sharp),
         subtitle: Text(subTitle),
         title: Text(title),
