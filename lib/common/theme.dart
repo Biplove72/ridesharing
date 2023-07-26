@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomTheme {
   static const Color primaryColor = Color(0xffDC143C);
+  static const Color secondoryColor = Color(0xff8012FF);
   static const double symmetricHozPadding = 20;
   static const Color lightGray = Color(0xFFF2f2F2);
   static const Color gray = Color(0xFFC4C4C4);
@@ -55,37 +56,14 @@ class CustomTheme {
       //fontStyle: FontStyle.normal,
       );
 
-  static ThemeData lightTheme = ThemeData(
-    primarySwatch: Colors.blue,
-    primaryColor: primaryColor,
-    primaryColorDark: primaryColor,
-    shadowColor: Colors.black,
-    appBarTheme:
-        const AppBarTheme(iconTheme: IconThemeData(color: primaryColor)),
-    scaffoldBackgroundColor: backgroundColor,
-    iconTheme: const IconThemeData(color: black),
-    fontFamily: "Inter",
-    textTheme: const TextTheme(
-        // titleLarge: TextStyle(
-        //     fontSize: 18,
-        //     color: Color(0xFF000000),
-        //     fontWeight: FontWeight.normal,
-        //     fontStyle: FontStyle.normal,
-        //     letterSpacing: 0.5),
-        // titleMedium: TextStyle(
-        //     fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 0.5),
-        // titleSmall: TextStyle(
-        //     fontSize: 14,
-        //     color: Color(0xFF000000),
-        //     fontWeight: FontWeight.w700,
-        //     letterSpacing: 0.5),
-        // labelLarge: TextStyle(
-        //     fontSize: 14,
-        //     height: 1.35,
-        //     color: Color(0xFF757575),
-        //     fontWeight: FontWeight.w400,
-        //     letterSpacing: 0.5)
-        ),
-    bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
+  static const TextStyle textStyle12 = TextStyle(
+    fontSize: 12,
+    height: 1.35,
+    color: Color(0xFF000000),
+    fontWeight: FontWeight.w700,
+
+    fontFamily: 'Inter',
+
+    //fontStyle: FontStyle.normal,
   );
 }

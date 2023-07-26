@@ -5,15 +5,15 @@ class CustomButton extends StatelessWidget {
       {Key? key,
       this.borderside,
       required this.text,
-      required this.width,
+      this.width,
       required this.navigation,
       this.color,
       this.textColor,
-      required this.height})
+      this.height})
       : super(key: key);
   final String text;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final VoidCallback navigation;
   final Color? color;
   final Color? textColor;
@@ -30,9 +30,9 @@ class CustomButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
             side: borderside ?? BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(20),
+              Radius.circular(30),
             )),
-        height: height,
+        height: height ?? 50,
         minWidth: width,
         child: Text(
           text,
